@@ -47,20 +47,21 @@ $ vagrant ssh
 ```
 ##### Connect DB Using Workbench by ssh: #####
 
-Download (if you don't have it) MySQL Workbench
-Within your project directory type vagrant ssh-config in the command line. This will give you a few things you'll need.
+- Download MySQL Workbench from https://dev.mysql.com/downloads/workbench/
+- Within your project directory type vagrant ssh-config in the command line. This will give you a few things you'll need.
 
-User: (most likely vagrant)
-IdentityFile (the path to the private key that MySQL workbench will need)
-Open up MySQL Workbench and create a new connection
+	-User: (most likely vagrant)
+	-IdentityFile (the path to the private key that MySQL workbench will need)
 
-Connection Method: Standard TCIP/IP over SSH
-SSH Hostname: 127.0.0.1:2222
-SSH Username: vagrant (from your ssh-config above)
-SSH Password: leave this alone
-SSH Key File: Use the IdentityFile path from above.
-MySQL Hostname: 127.0.0.1
-MySQL Port: 3306
-Username: whatever username you usually use
-Password: the password for the db
-After that, make sure your vagrant box is up and running, then you should be able to simply connect to the DB!
+- Open up MySQL Workbench and create a new connection
+
+	* Connection Method: Standard TCIP/IP over SSH
+	* SSH Hostname: 127.0.0.1:2222
+	* SSH Username: vagrant (from your ssh-config above)
+	* SSH Password: leave this alone
+	* SSH Key File: Use the IdentityFile path from above.
+	* MySQL Hostname: 127.0.0.1
+	* MySQL Port: 3306
+	* Username: whatever username you usually use
+	* Password: the password for the db
+	* After that, make sure your vagrant box is up and running, then you should be able to simply connect to the DB!

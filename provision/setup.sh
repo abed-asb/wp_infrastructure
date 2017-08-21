@@ -46,7 +46,6 @@ mysql -uroot -p$DBPASSWD -e "grant all privileges on $DBNAME.* to '$DBUSER'@'loc
 mysql -uroot -p$DBPASSWD -e "CREATE USER '$DBUSER_ABD'@'localhost' IDENTIFIED BY '$DBPASSWD_ABD';"
 mysql -uroot -p$DBPASSWD -e "GRANT ALL PRIVILEGES ON * . * TO '$DBUSER_ABD'@'localhost';"
 mysql -uroot -p$DBPASSWD -e "FLUSH PRIVILEGES;"
-mysql -uroot -p$DBPASSWD -e "CREATE DATABASE IF NOT EXISTS $DBNAME"
 
 # Git
 echo "\n Installing Git \n"
@@ -71,8 +70,8 @@ sudo service apache2 status
 # setup hosts file
 VHOST=$(cat <<EOF
 <VirtualHost *:80>
-    DocumentRoot "/var/www/html/${PROJECTFOLDER}"
-    <Directory "/var/www/html/${PROJECTFOLDER}">
+    DocumentRoot "/var/www/${PROJECTFOLDER}"
+    <Directory "/var/www/${PROJECTFOLDER}">
         AllowOverride All
         Require all granted
     </Directory>
